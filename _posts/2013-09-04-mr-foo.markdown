@@ -1,0 +1,6 @@
+---
+layout: post
+title: "Mr Foo Movie"
+date:   2013-09-04 20:41:36
+tags: action
+---
