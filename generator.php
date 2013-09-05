@@ -26,7 +26,7 @@ function slugify($text) {
   return $text;
 }
 
-function generate_posts($feed_url){
+function generate_posts($feed_url, $tag){
   $content = file_get_contents($feed_url);
   $x = new SimpleXMLElement($content);
 
@@ -34,7 +34,7 @@ function generate_posts($feed_url){
   foreach($x->channel->item as $item){
 
     $title = $item->title;
-    $tag = "bs";
+    $link = $item->link;
     //hehe hack
     $secondCheat = $i + 10;
     $date = date("Y-m-d G:i").":".$secondCheat;
@@ -45,6 +45,7 @@ layout: post
 title: \"".$title."\"
 date: ".$date."
 tags: ".$tag."
+link: \"".$link."\"
 ---
 Hellio
     ";
@@ -75,8 +76,15 @@ function clear_posts(){
 clear_posts();
 
 //amazon top movies
-generate_posts("http://www.amazon.com/gp/rss/bestsellers/movies-tv/2649512011/ref=zg_bs_2649512011_rsslink");
+//This is hte best sellers, the tag code is "bs"
+generate_posts("http://www.amazon.com/gp/rss/bestsellers/movies-tv/2649512011/ref=zg_bs_2649512011_rsslink", "bs");
+generate_posts("http://www.amazon.com/gp/rss/top-rated/movies-tv/2649512011/ref=zg_tr_2649512011_rsslink", "tr");
+
+generate_posts("http://www.amazon.com/gp/rss/bestsellers/movies-tv/2858905011/ref=zg_bs_2858905011_rsslink", "bsim");
 
 
+generate_posts("http://www.amazon.com/gp/rss/bestsellers/movies-tv/2858905011/ref=zg_bs_2858905011_rsslink", "bsim");
+
+generate_posts("http://www.amazon.com/gp/rss/top-rated/movies-tv/2858905011/ref=zg_bs_2858905011_rsslink", "trim");
 
 ?>
