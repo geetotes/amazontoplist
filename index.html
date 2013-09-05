@@ -10,8 +10,9 @@ title: Your New Jekyll Site
       <li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ post.url }}">{{ post.title }}</a></li>
     {% endfor %}
   </ul>
+  <h1>Best Sellers</h1>
   <ul class="categories">
-    {% for post in site.tags.action %}
+    {% for post in site.tags.bs %}
     <li>{{ post.title }}</li>
     {% endfor %}
   </ul>
