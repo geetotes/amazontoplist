@@ -1,0 +1,14 @@
+---
+layout: default
+title: "Your New Jekyll Site"
+---
+
+%div#home
+  %h1 Best Sellers - All Movies
+  %ul.posts
+    {% for post in site.tags.bs %}
+    %li
+      %span{{post.date | date_to_string}}
+      &raquo;
+      %a(href="{{post.link}}"){{post.title}}
+    {% endfor %}
