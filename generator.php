@@ -43,7 +43,7 @@ function generate_posts($feed_url, $tag){
 "---
 layout: post
 title: \"".$title."\"
-date: ".$date."
+date: \"".$date."\"
 tags: ".$tag."
 link: \"".$link."\"
 ---
@@ -79,9 +79,6 @@ clear_posts();
 //This is hte best sellers, the tag code is "bs"
 generate_posts("http://www.amazon.com/gp/rss/bestsellers/movies-tv/2649512011/ref=zg_bs_2649512011_rsslink", "bs");
 generate_posts("http://www.amazon.com/gp/rss/top-rated/movies-tv/2649512011/ref=zg_tr_2649512011_rsslink", "tr");
-
-generate_posts("http://www.amazon.com/gp/rss/bestsellers/movies-tv/2858905011/ref=zg_bs_2858905011_rsslink", "bsim");
-
 
 generate_posts("http://www.amazon.com/gp/rss/bestsellers/movies-tv/2858905011/ref=zg_bs_2858905011_rsslink", "bsim");
 

@@ -1,14 +1,46 @@
 ---
 layout: default
-title: "Your New Jekyll Site"
+title: "Amazon Top List"
 ---
 
 %div#home
-  %h1 Best Sellers - All Movies
-  %ul.posts
-    {% for post in site.tags.bs %}
-    %li
-      %span{{post.date | date_to_string}}
-      &raquo;
-      %a(href="{{post.link}}"){{post.title}}
-    {% endfor %}
+  %div.tab-titles
+    %a(href="#all") All Movies
+    %a(href="#instant") Instant Movies
+  %div#all.tab
+    %div.tab-content
+      %div.tab-section
+        %h3 Bestsellers
+        %ul.posts
+          {% for post in site.tags.bs %}
+          %li
+            %span &raquo;
+            %a(href="{{post.link}}"){{post.title}}
+          {% endfor %}
+      %div.tab-section
+        %h3 Top Rated
+        %ul.posts
+          {% for post in site.tags.tr %}
+          %li
+            %span &raquo;
+            %a(href="{{post.link}}"){{post.title}}
+          {% endfor %}
+  %div#instant.tab
+    %div.tab-content
+      %div.tab-section
+        %h3 Bestsellers
+        %ul.posts
+          {% for post in site.tags.bsim %}
+          %li
+            %span &raquo;
+            %a(href="{{post.link}}"){{post.title}}
+          {% endfor %}
+      %div.tab-section
+        %h3 Top Rated
+        %ul.posts
+          {% for post in site.tags.bsim %}
+          %li
+            %span &raquo;
+            %a(href="{{post.link}}"){{post.title}}
+          {% endfor %}
+%br.clear

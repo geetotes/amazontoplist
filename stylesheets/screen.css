@@ -8,3 +8,20 @@
   padding: 8px;
   margin: 8px;
   border-color: #3bbfce; }
+
+.tab-titles h1 {
+  float: left; }
+
+.tab {
+  clear: both; }
+
+.tab-section {
+  width: 50%;
+  float: left;
+  font-size: 78%; }
+
+.tab-titles a {
+  margin-left: 1em; }
+
+.clear {
+  clear: both; }
